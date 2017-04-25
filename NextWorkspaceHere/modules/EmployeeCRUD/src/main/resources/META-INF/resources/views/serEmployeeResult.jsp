@@ -4,9 +4,6 @@
 <portlet:param name="mvcPath" value="/views/serEmployee.jsp"/>
 </portlet:renderURL>
 
-<portlet:actionURL name="editEmp" var="editEmpURL">
-<portlet:param name="mvcPath" value="/views/editEmployee.jsp"/>
-</portlet:actionURL>
 
 <%
 Object e=request.getAttribute("emp");
@@ -22,6 +19,7 @@ if(e==null){
 	pageContext.setAttribute("em", em);
 	//response.getWriter().println(em);
 	%>
+	<form>
 	<div class="table-responsive">
     <table class="table">
     <tr><td>Employee ID</td> <td>Employee Name</td> <td>Employee Salary</td><td>Action</td></tr>
@@ -35,9 +33,18 @@ if(e==null){
        Action <span class="caret"></span>
     </button>
     <ul class="dropdown-menu">
+<portlet:renderURL var="editEmpURL">
+<portlet:param name="mvcPath" value="/views/editEmployee.jsp"/>
+<portlet:param name="eid" value="<%=em.getEid()+""%>"/>
+</portlet:renderURL>  
         <li><a href="${editEmpURL}">Edit</a></li>
         <li class="divider"></li>
-        <li><a href="#1">Delete</a></li>
+        
+<portlet:renderURL var="delEmpURL">
+<portlet:param name="mvcPath" value="/views/delEmployee.jsp"/>
+<portlet:param name="eid" value="<%=em.getEid()+""%>"/>
+</portlet:renderURL>
+        <li><a href="${delEmpURL}">Delete</a></li>
     </ul>
 </div>
    </td>

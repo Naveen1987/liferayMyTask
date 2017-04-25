@@ -116,4 +116,10 @@ javax.portlet.PortletException: javax.portlet.PortletException: processAction me
 		System.out.println("I got It in edit method"+ParamUtil.getLong(actionRequest, "eid"));
 		
 }
+	@ProcessAction(name="delEmp")
+	 public void delEmp(ActionRequest actionRequest, ActionResponse actionResponse)
+	   throws IOException, PortletException {
+		System.out.println("I got It in del method"+ParamUtil.getLong(actionRequest, "eid"));
+		
+}
 }
