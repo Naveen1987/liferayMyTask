@@ -4,6 +4,8 @@ package com.demo_employee.portlet;
 
 import com.demo.service.EmployeeSer;
 import com.employee.model.Employeee;
+import com.employee.service.EmployeeeLocalServiceUtil;
+import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
 import com.liferay.portal.kernel.servlet.SessionMessages;
 import com.liferay.portal.kernel.util.ParamUtil;
@@ -116,6 +118,21 @@ javax.portlet.PortletException: javax.portlet.PortletException: processAction me
 		System.out.println("I got It in edit method"+ParamUtil.getLong(actionRequest, "eid"));
 		
 }
+	
+	@ProcessAction(name="selectForEmp")
+	 public void selectForEmp(ActionRequest actionRequest, ActionResponse actionResponse)
+	   throws IOException, PortletException {
+		long eid=ParamUtil.getLong(actionRequest, "eid");
+		System.out.println("I got It in edit method"+eid);
+		try {
+			Employeee e=(Employeee)EmployeeeLocalServiceUtil.getEmployeee(eid);
+			actionRequest.setAttribute("employee", e);
+			//System.out.println(e);
+		} catch (PortalException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+} 
 	@ProcessAction(name="delEmp")
 	 public void delEmp(ActionRequest actionRequest, ActionResponse actionResponse)
 	   throws IOException, PortletException {
