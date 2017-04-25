@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.employee.model.Employeee">
+		<field name="eid" type="long" />
+		<field name="ename" type="String" />
+		<field name="esal" type="long" />
+	</model>
+</model-hints>

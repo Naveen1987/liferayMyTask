@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="false" default-lazy="false">
+	<import class="com.employee.model.Employeee" />
+	<class name="com.employee.model.impl.EmployeeeImpl" table="employee_naveen">
+		<id name="eid" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="ename" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="esal" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+</hibernate-mapping>
