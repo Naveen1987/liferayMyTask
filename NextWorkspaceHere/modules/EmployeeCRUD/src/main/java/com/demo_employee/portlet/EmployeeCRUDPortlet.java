@@ -127,7 +127,7 @@ javax.portlet.PortletException: javax.portlet.PortletException: processAction me
 		try {
 			Employeee e=(Employeee)EmployeeeLocalServiceUtil.getEmployeee(eid);
 			actionRequest.setAttribute("employee", e);
-			System.out.println(e);
+			//System.out.println(e);
 		} catch (PortalException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

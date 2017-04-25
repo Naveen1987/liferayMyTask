@@ -3,5 +3,5 @@
 <portlet:renderURL var="serEmpURL">
 <portlet:param name="mvcPath" value="/views/serEmployee.jsp"/>
 </portlet:renderURL>
-<%=request.getParameter("employee")%>
+<%=request.getAttribute("employee")%>
 <a class="btn btn-success"  href="${serEmpURL}">Back</a>
