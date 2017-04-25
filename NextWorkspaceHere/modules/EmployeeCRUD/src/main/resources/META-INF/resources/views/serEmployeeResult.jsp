@@ -33,18 +33,18 @@ if(e==null){
        Action <span class="caret"></span>
     </button>
     <ul class="dropdown-menu">
-<portlet:renderURL var="editEmpURL">
+<portlet:actionURL var="editEmpURL" name="editEmp">
 <portlet:param name="mvcPath" value="/views/editEmployee.jsp"/>
 <portlet:param name="eid" value="<%=em.getEid()+""%>"/>
-</portlet:renderURL>  
+</portlet:actionURL> 
         <li><a href="${editEmpURL}">Edit</a></li>
         <li class="divider"></li>
         
-<portlet:renderURL var="delEmpURL">
+<portlet:actionURL var="delEmpURL" name="delEmp">
 <portlet:param name="mvcPath" value="/views/delEmployee.jsp"/>
 <portlet:param name="eid" value="<%=em.getEid()+""%>"/>
-</portlet:renderURL>
-        <li><a href="${delEmpURL}">Delete</a></li>
+</portlet:actionURL>
+       <li><a href="${delEmpURL}">Delete</a></li>
     </ul>
 </div>
    </td>
