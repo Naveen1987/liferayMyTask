@@ -1,5 +1,7 @@
 <%@ include file="/init.jsp" %>
 
+
+
 <p>
 <portlet:renderURL var="addEmpURL">
 <portlet:param name="mvcPath" value="/views/addEmployee.jsp"/>

@@ -50,26 +50,26 @@ public class EmployeeCRUDPortlet extends MVCPortlet {
 				super.doView(renderRequest, renderResponse);
 	}
 	
-	//start
+//start(Actully no need of it to override this method in liferay 7 you can directly use SessionMessage)
 	//Here we are adding some defualt properties that will help to show
 	//any where we want to show
 	//with <liferay-ui:success key="success" message="Record saved successfully!"/>
-	@Override
-	public void processAction(
-	    ActionRequest actionRequest, ActionResponse actionResponse)
-	    throws IOException, PortletException {
-
-	    PortletPreferences prefs = actionRequest.getPreferences();
-	    String greeting = actionRequest.getParameter("greeting");
-
-	    if (greeting != null) {
-	        prefs.setValue("greeting", greeting);
-	        prefs.store();
-	    }
-	    //call this line when you need greeting
-	   // SessionMessages.add(actionRequest, "success");
-	    super.processAction(actionRequest, actionResponse);
-	}
+//	@Override
+//	public void processAction(
+//	    ActionRequest actionRequest, ActionResponse actionResponse)
+//	    throws IOException, PortletException {
+//
+//	    PortletPreferences prefs = actionRequest.getPreferences();
+//	    String greeting = actionRequest.getParameter("greeting");
+//
+//	    if (greeting != null) {
+//	        prefs.setValue("greeting", greeting);
+//	        prefs.store();
+//	    }
+//	    //call this line when you need greeting
+//	   // SessionMessages.add(actionRequest, "success");
+//	    super.processAction(actionRequest, actionResponse);
+//	}
 	//end
 
 /*
@@ -90,8 +90,7 @@ javax.portlet.PortletException: javax.portlet.PortletException: processAction me
 		long esal=ParamUtil.getLong(actionRequest,"empSal");
 		System.out.println(ename+" "+esal);  
 		new EmployeeSer().save(ename, esal);
-		//actionRequest.setAttribute("insert", "Successfully");
-		//for greeting
+		//for showing <liferay-ui:success key="success" message="Record saved successfully!"/> 
 		SessionMessages.add(actionRequest, "success");
 		System.out.println("Ok");
  }
@@ -114,8 +113,16 @@ javax.portlet.PortletException: javax.portlet.PortletException: processAction me
 	
 	@ProcessAction(name="editEmp")
 	 public void editEmp(ActionRequest actionRequest, ActionResponse actionResponse)
-	   throws IOException, PortletException {
-		System.out.println("I got It in edit method"+ParamUtil.getLong(actionRequest, "eid"));
+	   throws IOException, PortletException, PortalException {
+		long eid=ParamUtil.getLong(actionRequest, "eid");
+		String ename=ParamUtil.getString(actionRequest, "empName");
+		long esal=ParamUtil.getLong(actionRequest, "empSal");
+		Employeee e=(Employeee)EmployeeeLocalServiceUtil.getEmployeee(eid);
+		e.setEname(ename);
+		e.setEsal(esal);
+		EmployeeeLocalServiceUtil.updateEmployeee(e);
+		SessionMessages.add(actionRequest, "edit");
+		System.out.println("Edit="+eid+ename+esal);
 		
 }
 	
@@ -135,8 +142,12 @@ javax.portlet.PortletException: javax.portlet.PortletException: processAction me
 } 
 	@ProcessAction(name="delEmp")
 	 public void delEmp(ActionRequest actionRequest, ActionResponse actionResponse)
-	   throws IOException, PortletException {
-		System.out.println("I got It in del method"+ParamUtil.getLong(actionRequest, "eid"));
-		
+	   throws IOException, PortletException, PortalException {
+		long eid=ParamUtil.getLong(actionRequest, "empId");
+		String ename=ParamUtil.getString(actionRequest, "empName");
+		long esal=ParamUtil.getLong(actionRequest, "empSal");
+		EmployeeeLocalServiceUtil.deleteEmployeee(eid);
+		SessionMessages.add(actionRequest, "delete");
+		System.out.println("Delete="+eid+ename+esal);
 }
 }

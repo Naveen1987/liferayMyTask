@@ -8,7 +8,12 @@
 Employeee e=(Employeee)request.getAttribute("employee");
 %>
 
-<aui:form action="">
+<portlet:actionURL var="editEmpURL" name="editEmp">
+<portlet:param name="eid" value="<%=e.getEid()+""%>"/>
+<portlet:param name="mvcPath" value="/views/serEmployee.jsp"/>
+</portlet:actionURL>
+
+<aui:form action="${editEmpURL}">
 <aui:input name="empName" label="Employee Name" value="<%=e.getEname()+"" %>" id="empName">
 <aui:validator name="required" />
 </aui:input>
@@ -18,10 +23,11 @@ Employeee e=(Employeee)request.getAttribute("employee");
 <!-- It will not create button -->
 <!-- <aui:input name="" type="submit" value="Add Employee"></aui:input> -->
 <table>
-<tr><td><aui:button type="submit" value="Edit" /></td><td><a class="btn btn-success"  href="${serEmpURL}">Cancel</a></td></tr>
+<tr><td><aui:button name="edit-popup"  id="edit-popup" type="submit" value="Edit" /></td><td><a class="btn btn-success"  href="${serEmpURL}">Cancel</a></td></tr>
 </table>
  
 </aui:form>
+
 <%--
 <script>
  AUI().use('node', function(A){
