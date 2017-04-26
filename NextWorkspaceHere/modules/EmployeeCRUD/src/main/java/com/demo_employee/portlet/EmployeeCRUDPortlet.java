@@ -123,7 +123,7 @@ javax.portlet.PortletException: javax.portlet.PortletException: processAction me
 		EmployeeeLocalServiceUtil.updateEmployeee(e);
 		SessionMessages.add(actionRequest, "edit");
 		System.out.println("Edit="+eid+ename+esal);
-		
+				
 }
 	
 	@ProcessAction(name="selectForEmp")
@@ -140,6 +140,11 @@ javax.portlet.PortletException: javax.portlet.PortletException: processAction me
 			e.printStackTrace();
 		}
 } 
+	
+	
+	
+	
+	
 	@ProcessAction(name="delEmp")
 	 public void delEmp(ActionRequest actionRequest, ActionResponse actionResponse)
 	   throws IOException, PortletException, PortalException {
@@ -150,4 +155,51 @@ javax.portlet.PortletException: javax.portlet.PortletException: processAction me
 		SessionMessages.add(actionRequest, "delete");
 		System.out.println("Delete="+eid+ename+esal);
 }
+	
+	
+	@ProcessAction(name="selectForEmpAll")
+	 public void selectForEmpAll(ActionRequest actionRequest, ActionResponse actionResponse)
+	   throws IOException, PortletException {
+		long eid=ParamUtil.getLong(actionRequest, "eid");
+		System.out.println("I got It in edit method"+eid);
+		try {
+			Employeee e=(Employeee)EmployeeeLocalServiceUtil.getEmployeee(eid);
+			actionRequest.setAttribute("employee", e);
+			//System.out.println(e);
+		} catch (PortalException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+} 
+	
+	@ProcessAction(name="editEmpAll")
+	 public void editEmpAll(ActionRequest actionRequest, ActionResponse actionResponse)
+	   throws IOException, PortletException, PortalException {
+		long eid=ParamUtil.getLong(actionRequest, "eid");
+		String ename=ParamUtil.getString(actionRequest, "empName");
+		long esal=ParamUtil.getLong(actionRequest, "empSal");
+		Employeee e=(Employeee)EmployeeeLocalServiceUtil.getEmployeee(eid);
+		e.setEname(ename);
+		e.setEsal(esal);
+		EmployeeeLocalServiceUtil.updateEmployeee(e);
+		SessionMessages.add(actionRequest, "edit");
+		System.out.println("Edit="+eid+ename+esal);
+		//This is my way to call another action inside action bro
+		selEmp(actionRequest, actionResponse);
+		
+}
+	@ProcessAction(name="delEmpAll")
+	 public void delEmpAll(ActionRequest actionRequest, ActionResponse actionResponse)
+	   throws IOException, PortletException, PortalException {
+		long eid=ParamUtil.getLong(actionRequest, "empId");
+		String ename=ParamUtil.getString(actionRequest, "empName");
+		long esal=ParamUtil.getLong(actionRequest, "empSal");
+		EmployeeeLocalServiceUtil.deleteEmployeee(eid);
+		SessionMessages.add(actionRequest, "delete");
+		System.out.println("Delete="+eid+ename+esal);
+		//This is my way to call another action inside action bro
+		selEmp(actionRequest, actionResponse);
+}
+	
+	
 }
