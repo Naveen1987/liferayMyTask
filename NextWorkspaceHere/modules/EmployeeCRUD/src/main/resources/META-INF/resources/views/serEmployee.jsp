@@ -6,6 +6,8 @@
 <portlet:renderURL var="viewURL">
 <portlet:param name="mvcPath" value="/views/view.jsp"/>
 </portlet:renderURL>
+<liferay-ui:success key="delete" message="Record Deleted successfully!"/>
+<liferay-ui:success key="edit" message="Record Updated successfully!"/>
 
 <aui:form action="${serEmpURL}">
 <aui:input name="eid" type="text" label="Please Enter Eployee ID">
@@ -17,3 +19,8 @@
 </tr>
 </table>
 </aui:form>
+<script>
+ AUI().use('node', function(A){
+   A.one('#<portlet:namespace/>eid').set('value', ""); 
+ });
+</script>

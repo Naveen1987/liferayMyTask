@@ -3,6 +3,7 @@
 <liferay-ui:success key="success" message="Record saved successfully!"/>
 
 
+
 <portlet:actionURL name="addEmp" var="addEmpURL">
 <portlet:param name="mvcPath" value="/views/addEmployee.jsp"/>
 </portlet:actionURL>
