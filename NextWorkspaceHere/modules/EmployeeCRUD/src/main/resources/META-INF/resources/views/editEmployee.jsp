@@ -10,7 +10,7 @@ Employeee e=(Employeee)request.getAttribute("employee");
 
 <portlet:actionURL var="editEmpURL" name="editEmp">
 <portlet:param name="eid" value="<%=e.getEid()+""%>"/>
-<portlet:param name="mvcPath" value="/views/serEmployee.jsp"/>
+<portlet:param name="mvcPath" value="/views/serEmployeeResult.jsp"/>
 </portlet:actionURL>
 
 <aui:form action="${editEmpURL}">

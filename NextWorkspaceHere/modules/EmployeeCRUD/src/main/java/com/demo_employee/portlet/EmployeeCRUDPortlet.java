@@ -123,6 +123,8 @@ javax.portlet.PortletException: javax.portlet.PortletException: processAction me
 		EmployeeeLocalServiceUtil.updateEmployeee(e);
 		SessionMessages.add(actionRequest, "edit");
 		System.out.println("Edit="+eid+ename+esal);
+		//calling to search Employee for making chain among the actions
+		serEmp(actionRequest, actionResponse);
 				
 }
 	
