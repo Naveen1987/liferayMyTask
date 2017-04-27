@@ -44,6 +44,7 @@ public class PopupDemoPortlet extends MVCPortlet {
 		super.doView(renderRequest, renderResponse);
 	}
 	
+	//@ProcessAction(name="showEmp")
 	 public void showEmp(ActionRequest actionRequest, ActionResponse actionResponse)
 	   throws IOException, PortletException {
 		List<Employeee> el=EmployeeeLocalServiceUtil.getEmployeees(0, EmployeeeLocalServiceUtil.getEmployeeesCount());
@@ -56,5 +57,19 @@ public class PopupDemoPortlet extends MVCPortlet {
 		 long eid=ParamUtil.getLong(actionRequest, "employeeId");
 		 System.out.println(eid);
  		 EmployeeeLocalServiceUtil.deleteEmployeee(eid);
+ 		 SessionMessages.add(actionRequest, "delete");
+		}
+	 
+	 public void edit(ActionRequest actionRequest, ActionResponse actionResponse)
+			   throws IOException, PortletException, PortalException {
+		 System.out.println("edit");		
+		 long eid=ParamUtil.getLong(actionRequest, "eid");
+		 String ename=ParamUtil.getString(actionRequest, "empName");
+		 long esal=ParamUtil.getLong(actionRequest, "empSal");
+		 Employeee e=EmployeeeLocalServiceUtil.getEmployeee(eid);
+		 e.setEname(ename);
+		 e.setEsal(esal);
+		 EmployeeeLocalServiceUtil.updateEmployeee(e);
+		 SessionMessages.add(actionRequest, "edit");
 		}
 }

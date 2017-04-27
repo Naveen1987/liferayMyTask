@@ -1,6 +1,10 @@
 <%@page import="com.employee.service.EmployeeeLocalServiceUtil"%>
 <%@ include file="/init.jsp" %>
 
+<liferay-ui:success key="edit" message="Record Edited successfully!"/>
+<liferay-ui:success key="delete" message="Record Deleted successfully!"/>
+
+
 <liferay-portlet:renderURL varImpl="viewURL">
 <portlet:param name="mvcPath" value="/jsps/NewFile.jsp"/>
 </liferay-portlet:renderURL>
