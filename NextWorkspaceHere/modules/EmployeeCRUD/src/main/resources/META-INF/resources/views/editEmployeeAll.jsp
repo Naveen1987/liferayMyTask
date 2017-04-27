@@ -1,6 +1,6 @@
 <%@page import="com.employee.model.Employeee"%>
 <%@ include file="/init.jsp" %>
-<h1>Hello this me edit</h1>
+<h1>Edit Page</h1>
 <portlet:actionURL var="serEmpURL" name="selEmp">
 <portlet:param name="mvcPath" value="/views/selEmployee.jsp"/> 
 </portlet:actionURL>

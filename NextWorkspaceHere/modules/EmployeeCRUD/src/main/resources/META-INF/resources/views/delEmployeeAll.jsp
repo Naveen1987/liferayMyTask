@@ -2,7 +2,7 @@
 <%@ include file="/init.jsp" %>
 
 
-<h1>Hello this me delete</h1>
+<h1>Delete Page</h1>
 <portlet:actionURL var="serEmpURL" name="selEmp">
 <portlet:param name="mvcPath" value="/views/selEmployee.jsp"/> 
 </portlet:actionURL>
