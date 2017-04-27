@@ -1,9 +1,9 @@
 <%@ include file="/init.jsp" %>
 <portlet:renderURL var="editCancelURL">
-         <portlet:param name="mvcPath" value="/jsps/view.jsp" />
+         <portlet:param name="mvcPath" value="/jsps/NewFile.jsp" />
 </portlet:renderURL>
 <portlet:actionURL name="add" var="addEmp">
-<portlet:param name="mvcPath" value="/jsps/view.jsp"/>
+<portlet:param name="mvcPath" value="/jsps/NewFile.jsp"/>
 </portlet:actionURL>
 
 <aui:form action="${addEmp}" method="post">

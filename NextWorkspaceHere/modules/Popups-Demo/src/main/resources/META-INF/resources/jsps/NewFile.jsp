@@ -54,3 +54,18 @@
 
 	<liferay-ui:search-iterator />
 </liferay-ui:search-container>
+<%--Now Adding of Insert button--%>
+<portlet:renderURL var="addURL">
+<portlet:param name="mvcPath" value="/jsps/add.jsp"/>
+</portlet:renderURL>
+<%-- <liferay-ui:icon image="add" url="${addURL}"/> --%>
+<a class="btn btn-action btn-primary" href="${addURL}">
+    <svg class="icon-monospaced lexicon-icon">
+        <use xlink:href="../../images/icons/icons.svg#plus" />
+    </svg>
+</a>
+
+<portlet:renderURL var="backURL">
+         <portlet:param name="mvcPath" value="/jsps/view.jsp" />
+</portlet:renderURL>
+<a class="btn btn-success"  href="${backURL}">Back</a>
