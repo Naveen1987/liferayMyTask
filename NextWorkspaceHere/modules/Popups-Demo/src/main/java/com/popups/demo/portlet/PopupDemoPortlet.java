@@ -1,6 +1,7 @@
 package com.popups.demo.portlet;
 import com.employee.model.Employeee;
 import com.employee.service.EmployeeeLocalServiceUtil;
+import com.liferay.counter.kernel.service.CounterLocalServiceUtil;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
 import com.liferay.portal.kernel.servlet.SessionMessages;
@@ -71,5 +72,16 @@ public class PopupDemoPortlet extends MVCPortlet {
 		 e.setEsal(esal);
 		 EmployeeeLocalServiceUtil.updateEmployeee(e);
 		 SessionMessages.add(actionRequest, "edit");
+		}
+	 public void add(ActionRequest actionRequest, ActionResponse actionResponse)
+			   throws IOException, PortletException, PortalException {
+		 System.out.println("Add");		
+		 String ename=ParamUtil.getString(actionRequest, "empName");
+		 long esal=ParamUtil.getLong(actionRequest, "empSal");
+		 Employeee e=EmployeeeLocalServiceUtil.createEmployeee(CounterLocalServiceUtil.increment());
+		 e.setEname(ename);
+		 e.setEsal(esal);
+		 EmployeeeLocalServiceUtil.addEmployeee(e);
+		 SessionMessages.add(actionRequest, "add");
 		}
 }
