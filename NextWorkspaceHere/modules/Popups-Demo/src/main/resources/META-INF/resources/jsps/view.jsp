@@ -8,10 +8,10 @@
 </portlet:actionURL>
 <aui:button  value="List Only" id="btnshowEmp"/>
 
-<portlet:renderURL var="viewURL">
-<portlet:param name="mvcPath" value="/jsps/NewFile.jsp"/>
+<portlet:renderURL var="viewURL"  windowState="<%=LiferayWindowState.POP_UP.toString()%>">
+<portlet:param name="mvcPath" value="/jsps/NewFile.jsp" />
 </portlet:renderURL>
-<aui:button  value="List Operation" id="btnviewURL" onClick="${viewURL}" />
+<aui:button  value="List Operation" id="btnviewURL"/>
 
 <portlet:renderURL var="addURL">
 <portlet:param name="mvcPath" value="/jsps/add.jsp"/>
@@ -62,7 +62,22 @@ uri: '<%=showEmpURL%>'
 });
 </aui:script>
 
-
+<aui:script use="liferay-util-window">
+A.one('#<portlet:namespace/>btnviewURL').on('click', function(event) {
+alert("open");
+Liferay.Util.openWindow({
+dialog: {
+centered: true,
+//height: 500,
+modal: true,
+width: 950
+},
+id: '<portlet:namespace/>listEditdialog',
+title: 'Employee Information',
+uri: '<%=viewURL%>'
+});
+});
+</aui:script>
 
 <!-- For Closing --> 
 <aui:script> 

@@ -80,9 +80,9 @@ List<Employeee> el=(List<Employeee>)EmployeeeLocalServiceUtil.getEmployeees(0, E
     	<%--<liferay-ui:search-iterator searchContainer="<%= searchContainer %>" paginate="true"> --%>
 </liferay-ui:search-container>
 
-<portlet:renderURL var="backURL">
+<%--<portlet:renderURL var="backURL">
          <portlet:param name="mvcPath" value="/jsps/view.jsp" />
-</portlet:renderURL>
+</portlet:renderURL> --%>
 <a class="btn btn-success" id="btnback" onClick="<portlet:namespace />closeLiferayPopUP()">Back</a>
   <script>
   function <portlet:namespace />closeLiferayPopUP()

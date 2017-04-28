@@ -14,6 +14,7 @@
 <aui:validator name="required" />
 </aui:input>
 <table>
-<tr><td><aui:button type="submit" value="Add Employee" /></td><td><a class="btn btn-success"  href="${editCancelURL}">Cancel</a></td></tr>
+<tr><td><aui:button type="submit" value="Add Employee" /></td>
+<td><a class="btn btn-success"  href="${editCancelURL}">Cancel</a></td></tr>
 </table>
 </aui:form>
