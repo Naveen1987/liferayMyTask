@@ -83,4 +83,6 @@ List<Employeee> el=(List<Employeee>)EmployeeeLocalServiceUtil.getEmployeees(0, E
 <portlet:renderURL var="backURL">
          <portlet:param name="mvcPath" value="/jsps/view.jsp" />
 </portlet:renderURL>
-<a class="btn btn-success"  href="${backURL}">Back</a>
+<a class="btn btn-success" name="<portlet:namespace/>btnback">Back</a>
+
+ 

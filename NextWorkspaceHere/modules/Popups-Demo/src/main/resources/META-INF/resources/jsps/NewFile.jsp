@@ -68,4 +68,6 @@
 <portlet:renderURL var="backURL">
          <portlet:param name="mvcPath" value="/jsps/view.jsp" />
 </portlet:renderURL>
-<a class="btn btn-success"  href="${backURL}">Back</a>
+<a class="btn btn-success" id="closeDialog"  href="${backURL}">Back</a>
+
+
