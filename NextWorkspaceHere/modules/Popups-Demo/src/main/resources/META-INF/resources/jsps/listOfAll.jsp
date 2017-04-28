@@ -83,6 +83,13 @@ List<Employeee> el=(List<Employeee>)EmployeeeLocalServiceUtil.getEmployeees(0, E
 <portlet:renderURL var="backURL">
          <portlet:param name="mvcPath" value="/jsps/view.jsp" />
 </portlet:renderURL>
-<a class="btn btn-success" name="<portlet:namespace/>btnback">Back</a>
-
+<a class="btn btn-success" id="btnback" onClick="<portlet:namespace />closeLiferayPopUP()">Back</a>
+  <script>
+  function <portlet:namespace />closeLiferayPopUP()
+   {  
+	  alert("first"); 
+      var data = ''; 
+	Liferay.Util.getOpener().<portlet:namespace/>closeYourPopUp(data, '<portlet:namespace/>listdialog');
+	}
+  </script>
  
