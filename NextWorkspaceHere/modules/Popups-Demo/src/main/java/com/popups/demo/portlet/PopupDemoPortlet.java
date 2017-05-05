@@ -28,6 +28,7 @@ import org.osgi.service.component.annotations.Component;
 	property = {
 		"com.liferay.portlet.display-category=Naveen Apps",
 		"com.liferay.portlet.instanceable=true",
+		"com.liferay.portlet.header-portal-css=/css/main.css",
 		"javax.portlet.init-param.add-process-action-success-action=false",
 		"javax.portlet.display-name=Popups-Demo",
 		"javax.portlet.init-param.template-path=/jsps/",

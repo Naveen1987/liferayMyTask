@@ -1,5 +1,6 @@
 <%@page import="com.employee.service.EmployeeeLocalServiceUtil"%>
 <%@ include file="/init.jsp" %>
+<%--<a class="mystyle">Hello My Friends</a> --%>
 
 <liferay-ui:success key="edit" message="Record Edited successfully!"/>
 <liferay-ui:success key="delete" message="Record Deleted successfully!"/>
@@ -58,12 +59,17 @@
 <portlet:renderURL var="addURL">
 <portlet:param name="mvcPath" value="/jsps/add.jsp"/>
 </portlet:renderURL>
-<%-- <liferay-ui:icon image="add" url="${addURL}"/> --%>
+
+<liferay-ui:icon image="add"  url="${addURL}"/>
+
+<%--this is css button to show --%>
+<%--
 <a class="btn btn-action btn-primary" href="${addURL}">
     <svg class="icon-monospaced lexicon-icon">
         <use xlink:href="../../images/icons/icons.svg#plus" />
     </svg>
 </a>
+ --%>
 
 <%--<portlet:renderURL var="backURL">
          <portlet:param name="mvcPath" value="/jsps/view.jsp" />

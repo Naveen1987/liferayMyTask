@@ -13,11 +13,11 @@
 </portlet:renderURL>
 <aui:button  value="List Operation" id="btnviewURL"/>
 
-<portlet:renderURL var="addURL">
+<%--<portlet:renderURL var="addURL">
 <portlet:param name="mvcPath" value="/jsps/add.jsp"/>
 </portlet:renderURL>
 <aui:button  value="New Employee" id="btnaddURL"/>
-
+ --%>
 
 
 <portlet:renderURL var="loginURL" windowState="<%=LiferayWindowState.POP_UP.toString()%>">
@@ -26,15 +26,16 @@
 <aui:button name="login" type="button" id="login" value="Click Here For Login" />
 
 
-<aui:script use="liferay-util-window">
+<aui:script use="liferay-util-window,aui-dialog">
 A.one('#<portlet:namespace/>login').on('click', function(event) {
 <!-- alert("open"); -->
 Liferay.Util.openWindow({
 dialog: {
 centered: true,
-height: 500,
+cssClass: 'my-liferay-popup',
+constrain2view: true,
 modal: true,
-width: 500
+width: 950
 },
 id: '<portlet:namespace/>dialog',
 title: 'Login',
@@ -50,10 +51,11 @@ A.one('#<portlet:namespace/>btnshowEmp').on('click', function(event) {
 alert("open");
 Liferay.Util.openWindow({
 dialog: {
-centered: true,
-//height: 500,
-modal: true,
-width: 950
+	centered: true,
+	cssClass: 'my-liferay-popup',
+	constrain2view: true,
+	modal: true,
+	width: 950
 },
 id: '<portlet:namespace/>listdialog',
 title: 'Employee Information',
@@ -67,10 +69,11 @@ A.one('#<portlet:namespace/>btnviewURL').on('click', function(event) {
 alert("open");
 Liferay.Util.openWindow({
 dialog: {
-centered: true,
-//height: 500,
-modal: true,
-width: 950
+	centered: true,
+	cssClass: 'my-liferay-popup',
+	constrain2view: true,
+	modal: true,
+	width: 950
 },
 id: '<portlet:namespace/>listEditdialog',
 title: 'Employee Information',

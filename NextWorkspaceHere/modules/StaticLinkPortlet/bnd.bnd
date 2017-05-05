@@ -1,0 +1,3 @@
+Bundle-Name: StaticLinkPortlet
+Bundle-SymbolicName: com.demo.staticlink
+Bundle-Version: 1.0.0
