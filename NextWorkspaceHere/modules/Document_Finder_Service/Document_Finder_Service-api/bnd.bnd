@@ -1,0 +1,9 @@
+Bundle-Name: Document_Finder_Service-api
+Bundle-SymbolicName: document_finder_service.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	document_finder_service.exception,\
+	document_finder_service.model,\
+	document_finder_service.service,\
+	document_finder_service.service.persistence
+-includeresource: META-INF/service.xml=../Document_Finder_Service-service/service.xml

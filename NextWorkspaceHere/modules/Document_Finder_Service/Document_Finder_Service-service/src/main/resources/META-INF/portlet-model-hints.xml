@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="document_finder_service.model.DocumentInfo">
+		<field name="DocID" type="long" />
+		<field name="DocName" type="String" />
+		<field name="DocGen" type="String" />
+		<field name="DocFee" type="int" />
+		<field name="DocSize" type="String" />
+		<field name="DocPreUrl" type="String" />
+		<field name="DocDownUrl" type="String" />
+	</model>
+</model-hints>

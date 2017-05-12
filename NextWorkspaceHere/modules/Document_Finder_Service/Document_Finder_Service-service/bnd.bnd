@@ -1,0 +1,5 @@
+Bundle-Name: Document_Finder_Service-service
+Bundle-SymbolicName: document_finder_service.service
+Bundle-Version: 1.0.0
+Liferay-Require-SchemaVersion: 1.0.0
+Liferay-Service: true

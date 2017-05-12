@@ -6,9 +6,8 @@
 
 <%--<%=BlogsEntryLocalServiceUtil.getBlogsEntriesCount()%>--%>
 <%--<%=BlogsEntryLocalServiceUtil.getBlogsEntries(0, BlogsEntryLocalServiceUtil.getBlogsEntriesCount()) %> --%>
-
 <div style="height:100px; overflow:auto;">
-<table>
+<table style="border-collapse: separate; border-spacing: 5px;" width="100%">
 <%--<tr>
 <td>Date</td><td>Title</td>
 </tr> --%>
@@ -17,8 +16,8 @@ List<BlogsEntry>lt=BlogsEntryLocalServiceUtil.getBlogsEntries(0, BlogsEntryLocal
 for(BlogsEntry b:lt){
 	%>
 	<tr>
-	<td style="background-color:green; width:100px"><%=new SimpleDateFormat("dd/MM/YYYY").format(b.getCreateDate()).toString()%></td>
-	<td><%=b.getTitle()%></td>
+	<td style="background-color:#70db70; font-family: Helvetica Neue,Helvetica,Arial,sans-serif;font-weight: bold; font-size: 14px; width:100px ;padding: 3px;"><%=new SimpleDateFormat("dd/MM/YYYY").format(b.getCreateDate()).toString()%></td>
+	<td style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif; font-size: 14px; padding: 3px;"><%=b.getTitle()%></td>
 	</tr>
 	<%
 }
