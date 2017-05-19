@@ -10,7 +10,7 @@ YUI().use(
       {
         children: [
         	{
-        		label:'<a href=#>Ufficio Qualità e Accreditamento</a>'	
+        		label:'<a href="/group/ufficio_qualita_e_accreditamento" target="_blank">Ufficio Qualità e Accreditamento</a>'	
         	},
         	{
             	label:'<a href=#>Farmacia</a>'	
