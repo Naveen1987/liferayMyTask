@@ -27,27 +27,29 @@ public class PostLoginActionPortlet implements LifecycleAction {
  public static final Log LOGGER = LogFactoryUtil.getLog(PostLoginActionPortlet.class);
  @Override
  public void processLifecycleEvent(LifecycleEvent lifecycleEvent) throws ActionException {
-  LOGGER.info("PostLogin called");
-  HttpServletRequest request=lifecycleEvent.getRequest();
-  try{
-	  User user=PortalUtil.getUser(request);
-	  LOGGER.info("User is:"+user.getFullName());
-	  LOGGER.info("User Role is:"+user.getRoles());
-	  //Both are same
-	  //LOGGER.info("User Role"+RoleLocalServiceUtil.getUserRoles(user.getUserId()));
-	  LOGGER.info("Roles is:"+Arrays.toString(PortalUtil.getSystemRoles()));
-	  LOGGER.info("Roles is:"+Arrays.toString(PortalUtil.getSystemSiteRoles()));
-	  
-	  for(Role role:user.getRoles()){
-		  LOGGER.info("Roles name:"+role.getName());
-	  }
-			 
-	  
-  }catch (PortalException e) {
-	// TODO: handle exception
-}
-        //HttpSession session = lifecycleEvent.getRequest().getSession();
+  LOGGER.info("Redirecting to internal-intranet.....");
+  HttpSession session = lifecycleEvent.getRequest().getSession();
+  session.setAttribute("LAST_PATH", new LastPath(StringPool.BLANK, "/web/internal-intranet"));
+  LOGGER.info("Redirecting to internal-intranet.....");
+  //HttpServletRequest request=lifecycleEvent.getRequest();
+//  try{
+//	
+////	  User user=PortalUtil.getUser(request);
+////	  LOGGER.info("User is:"+user.getFullName());
+////	  LOGGER.info("User Role is:"+user.getRoles());
+////	  //Both are same
+////	  //LOGGER.info("User Role"+RoleLocalServiceUtil.getUserRoles(user.getUserId()));
+////	  LOGGER.info("Roles is:"+Arrays.toString(PortalUtil.getSystemRoles()));
+////	  LOGGER.info("Roles is:"+Arrays.toString(PortalUtil.getSystemSiteRoles()));
+////	  
+////	  for(Role role:user.getRoles()){
+////		  LOGGER.info("Roles name:"+role.getName());
+////	  }
+////			 
+////	  
+//  }catch (PortalException e) {
+//	// TODO: handle exception
+//}
         
-       // session.setAttribute("LAST_PATH", new LastPath(StringPool.BLANK, "/web/guest/landMeOnMoon"));
  }
 }
