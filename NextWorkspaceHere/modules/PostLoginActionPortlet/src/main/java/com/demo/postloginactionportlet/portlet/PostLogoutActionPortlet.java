@@ -29,7 +29,7 @@ public class PostLogoutActionPortlet implements LifecycleAction {
  public void processLifecycleEvent(LifecycleEvent lifecycleEvent) throws ActionException {
   LOGGER.info("Redirecting to regione-lombardia.....");
   HttpSession session = lifecycleEvent.getRequest().getSession();
-  session.setAttribute("LAST_PATH", new LastPath(StringPool.BLANK, "/web/regione-lombardia"));
+  session.setAttribute("LAST_PATH", new LastPath(StringPool.BLANK, "/web/regione-lombardia/welcome"));
   LOGGER.info("Redirecting to regione-lombardia.....");        
  }
 }

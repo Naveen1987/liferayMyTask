@@ -29,7 +29,7 @@ public class PostLoginActionPortlet implements LifecycleAction {
  public void processLifecycleEvent(LifecycleEvent lifecycleEvent) throws ActionException {
   LOGGER.info("Redirecting to internal-intranet.....");
   HttpSession session = lifecycleEvent.getRequest().getSession();
-  session.setAttribute("LAST_PATH", new LastPath(StringPool.BLANK, "/web/internal-intranet"));
+  session.setAttribute("LAST_PATH", new LastPath(StringPool.BLANK, "/group/internal-intranet/welcome"));
   LOGGER.info("Redirecting to internal-intranet.....");
   //HttpServletRequest request=lifecycleEvent.getRequest();
 //  try{

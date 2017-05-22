@@ -10,31 +10,37 @@ YUI().use(
       {
         children: [
         	{
-        		label:'<a href="/group/ufficio_qualita_e_accreditamento" target="_blank">Ufficio Qualità e Accreditamento</a>'	
+        		label:'<a href="/group/ufficio_qualita_e_accreditamento/welcome" target="_blank">Ufficio Qualità e Accreditamento</a>'	
         	},
         	{
-            	label:'<a href=#>Farmacia</a>'	
+            	label:'<a href="/group/farmacia/welcome">Farmacia</a>'	
             },
         	{
-            	label:'<a href=#>SIECIO/CIO</a>'	
+            	label:'<a href="/group/siecio_cio/welcome">SIECIO/CIO</a>'	
             },
             {
-            	label:'<a href=#>SPP/MC</a>'	
+            	label:'<a href="/group/spp_mc/welcome">SPP/MC</a>'	
             },
             {
-            	label:'<a href=#>Direzioni Mediche</a>'	
+            	label:'<a href="/group/direzioni_mediche/welcome">Direzioni Mediche</a>'	
             },
             {
-            	label:'<a href=#>SITRA</a>'	
+            	label:'<a href="/group/sitra/welcome">SITRA</a>'	
             },
             {
-            	label:'<a href=#>Comitati/Gruppi di Miglioramento</a>'	
+            	label:'<a href="/group/hrm/welcome">HRM</a>'	
             },
             {
-            	label:'<a href=#>Accrediatmento e Controlli</a>'	
+            	label:'<a href="/group/comitati_gruppi_di_miglioramento/welcome">Comitati/Gruppi di Miglioramento</a>'	
             },
             {
-            	label:'<a href=#>Cartella Clinica</a>'	
+            	label:'<a href="/group/rapporti_e_dati/welcome">Rapporti e Dati</a>'	
+            },
+            {
+            	label:'<a href="/group/accrediatmento_e_controlli/welcome">Accrediatmento e Controlli</a>'	
+            },
+            {
+            	label:'<a href="/group/cartella_clinica/welcome">Cartella Clinica</a>'	
             }
             
         ],
