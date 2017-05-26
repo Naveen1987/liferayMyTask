@@ -6,11 +6,9 @@
 
 <%--<%=BlogsEntryLocalServiceUtil.getBlogsEntriesCount()%>--%>
 <%--<%=BlogsEntryLocalServiceUtil.getBlogsEntries(0, BlogsEntryLocalServiceUtil.getBlogsEntriesCount()) %> --%>
+<%--
 <div style="height:100px; overflow:auto;">
 <table style="border-collapse: separate; border-spacing: 5px;" width="100%">
-<%--<tr>
-<td>Date</td><td>Title</td>
-</tr> --%>
 <% 
 List<BlogsEntry>lt=BlogsEntryLocalServiceUtil.getBlogsEntries(0, BlogsEntryLocalServiceUtil.getBlogsEntriesCount());
 for(BlogsEntry b:lt){
@@ -22,5 +20,30 @@ for(BlogsEntry b:lt){
 	<%
 }
 %>
+</table>
+</div>
+ --%>
+<div style="height:100px; overflow:auto;">
+<table  class="table table-striped">
+<%--<thead style="height:10px">
+    <tr class="bg-primary">
+      <th><b>Publish Date</b></th>
+      <th><b>Title</b></th>
+    </tr>
+  </thead>
+   --%>
+<tbody>
+<% 
+List<BlogsEntry>lt=BlogsEntryLocalServiceUtil.getBlogsEntries(0, BlogsEntryLocalServiceUtil.getBlogsEntriesCount());
+for(BlogsEntry b:lt){
+	%>
+	<tr>
+	<td style="width:150px;background-color:#b9def8"><b><%=new SimpleDateFormat("dd/MM/YYYY").format(b.getCreateDate()).toString()%></b></td>
+	<td><%=b.getTitle()%></td>
+	</tr>
+	<%
+}
+%>
+</tbody>
 </table>
 </div>

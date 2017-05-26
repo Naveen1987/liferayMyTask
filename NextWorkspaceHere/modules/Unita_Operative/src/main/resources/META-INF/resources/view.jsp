@@ -9,43 +9,43 @@ YUI().use(
       {
         children: [
         	{
-        		label:'<a href=#>Farmacia OspedalieraIs</a>'	
+        		label:' <a  href="/group/farmacia_ospedalieraIs/welcome"  target="_blank">Farmacia OspedalieraIs</a>'	
         	},
         	{
-            	label:'<a href=#>Staff Sistemi Informativi</a>'	
+            	label:'<a  href="/group/staff_sistemi_snformativi/welcome"  target="_blank">Staff Sistemi Informativi</a>'	
             },
         	{
-            	label:'<a href=#>Sviluppo e Formazione</a>'	
+            	label:'<a  href="/group/sviluppo_e_formazione/welcome"  target="_blank">Sviluppo e Formazione</a>'	
             },
             {
-            	label:'<a href=#>Controllo di Gestione</a>'	
+            	label:'<a  href="/group/controllo_di_gestione/welcome"  target="_blank">Controllo di Gestione</a>'	
             },
             {
-            	label:'<a href=#>Ufficio Relazioni con il pubblico</a>'	
+            	label:' <a  href="/group/ufficio_relazioni_con_il_pubblico/welcome" target="_blank">Ufficio Relazioni con il pubblico</a>'	
             },
             {
-            	label:'<a href=#>Servizio Risorse Umane</a>'	
+            	label:'<a  href="/group/servizio_risorse_umane/welcome" target="_blank">Servizio Risorse Umane</a>'	
             },
             {
-            	label:'<a href=#>Ufficio Valutazione</a>'	
+            	label:' <a  href="/group/ufficio_valutazione/welcome" target="_blank">Ufficio Valutazione</a>'	
             },
             {
-            	label:'<a href=#>Flussi Informativi Sanitari</a>'	
+            	label:'<a  href="/group/flussi_informativi_sanitari/welcome" target="_blank">Flussi Informativi Sanitari</a>'	
             },
             {
-            	label:'<a href=#>Laboratorio Analisi Magenta</a>'	
+            	label:'<a  href="/group/laboratorio_analisi_magenta/welcome" target="_blank">Laboratorio Analisi Magenta</a>'	
             },
             {
-            	label:'<a href=#>Servizio Acquisti e Appalti</a>'	
+            	label:'<a  href="/group/servizio_acquisti_e_appalti/welcome" target="_blank">Servizio Acquisti e Appalti</a>'	
             },
             {
-            	label:'<a href=#> Servizio Dietietico</a>'	
+            	label:'<a  href="/group/servizio_dietietico/welcome" target="_blank">Servizio Dietietico</a>'	
             },
             {
-            	label:'<a href=#> Affari Generali e Legali</a>'	
+            	label:'<a  href="/group/affari_generali_e_legali/welcome" target="_blank">Affari Generali e Legali</a>'	
             },
             {
-            	label:'<a href=#>Comitato Scientifico</a>'	
+            	label:'<a  href="/group/comitato_scientifico/welcome" target="_blank">Comitato Scientifico</a>'	
             }
         ],
         expanded: true,
